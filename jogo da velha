@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>JOGO DA VELHA</title>
+<script language="Javascript">
+  var estado;
+  estado = new Array(0, 0, 0, 0, 0,0,0,0);
+
+  function clicou(qual)
+  {
+      if(estado[qual-1] == 0)
+      {
+        estado[qual-1] = 1;
+        document.getElementById("jogo" + qual).setAttribute("src","x.jpg");
+      }
+      else
+      {
+        estado[qual-1] = 0;
+        document.getElementById("jogo" + qual).setAttribute("src","o.png");
+      }
+  }
+  function clicou2(qual)
+  {
+      if(estado[qual-1] == 0)
+      {
+        estado[qual-1] = 1;
+        document.getElementById("jogo1" + qual).setAttribute("src","x.jpg");
+      }
+      else
+      {
+        estado[qual-1] = 0;
+        document.getElementById("jogo1" + qual).setAttribute("src","o.png");
+      }
+  }
+  function clicou3(qual)
+  {
+      if(estado[qual-1] == 0)
+      {
+        estado[qual-1] = 1;
+        document.getElementById("jogo2" + qual).setAttribute("src","x.jpg");
+      }
+      else
+      {
+        estado[qual-1] = 0;
+        document.getElementById("jogo2" + qual).setAttribute("src","o.png");
+      }
+  }
+ 
+</script>
+</head>
+<body >
+ 
+    <form>
+        <script language="Javascript">
+            var i;
+            for(i = 1; i <= 3; ++i)
+            {  document.write("<img id='jogo1" + i + "' width='80' height='70' src='o.png' onclick='clicou2(" + i + ");'>");
+               document.write("<img id='jogo2" + i + "' width='80' height='70' src='o.png' onclick='clicou3(" + i + ");'>");
+                document.write("<img id='jogo" + i + "' width='80' height='70' src='o.png' onclick='clicou(" + i + ");'><br><br>");
+            }
+        </script>
+       
+    </form>
+</body>
+</html>
